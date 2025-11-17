@@ -3,6 +3,12 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
+@app.route("/", methods=["GET"])
+def home():
+    return (
+        "<h1>Cricket Scorer API</h1>"
+        "<p>Use /score, /ball (POST), and /reset (POST) endpoints.</p>"
+    )
 
 # In-memory match state
 match_state = {
